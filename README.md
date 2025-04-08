@@ -7,6 +7,12 @@ This project blends basic web scraping with a minimal interface and database-pow
 
 ---
 
+## 📋 Project Management
+
+Track MVP progress here: [Trello Board](https://trello.com/b/DEoVMkQr/pinced)
+
+---
+
 ## Idea
 
 Most food delivery and discovery apps don’t let you search for a **specific dish** – especially across **small local spots** with old-school menus.
@@ -40,16 +46,3 @@ Pinced fills that gap by scraping available menus and letting users input the na
 - **Scraping**: Laravel HTTP Client + Symfony DomCrawler
 - **Database**: MySQL (users, searches, favorites, etc.)
 - **Hosting (planned)**: Vercel for frontend, Render or similar for backend/API
-
----
-
-## Architecture Overview
-
-- App scrapes simple restaurant menus for dish keywords
-- Scraped dishes are cached in the DB to improve UX
-- Core table: `dishes` with fields: name, snippet, source link, etc.
-
-Planned Features:
-- Laravel Auth
-- Saved searches
-- Favorites
