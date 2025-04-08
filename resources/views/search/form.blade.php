@@ -14,7 +14,7 @@
 		</div>
 	@endif
 
-	<form action="{{ route('search.submit') }}" method="POST">
+	<form action="/" method="POST">
 		@csrf
 		<label for="dish">Dish name:</label><br>
 		<input type="text" name="dish" id="dish" placeholder="e.g. carbonara" required><br><br>
