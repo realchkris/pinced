@@ -9,8 +9,8 @@ This project blends basic web scraping with a minimal interface and database-pow
 
 ## 📋 Project Management
 
-Track MVP progress here: [Trello Board](https://trello.com/b/DEoVMkQr/pinced)
-See the UI Designs here: [Figma Designs](https://www.figma.com/design/v4wwEvDx8WI8Biz5Jyzf8C/Pinced)
+- Track MVP progress here: [Trello Board](https://trello.com/b/DEoVMkQr/pinced)
+- Check the UI Designs here: [Figma Designs](https://www.figma.com/design/v4wwEvDx8WI8Biz5Jyzf8C/Pinced)
 
 ---
 
