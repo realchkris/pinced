@@ -11,7 +11,6 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-
 		Schema::create('dishes', function (Blueprint $table) {
 			$table->id();
 
@@ -23,8 +22,6 @@ return new class extends Migration
 
 			$table->timestamps(); // Laravel created_at / updated_at
 		});
-
-
 	}
 
 	/**
