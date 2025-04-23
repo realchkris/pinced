@@ -37,3 +37,7 @@
 .container-quinary {
   @apply rounded-lg bg-pred;
 }
+
+.skeleton-loader-primary {
+	@apply rounded-lg bg-pgreen-olive animate-pulse;
+}
