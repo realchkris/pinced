@@ -2,13 +2,38 @@
 @source "../views";
 
 @theme {
-  --color-pgreen-dark: #455037;
-  --color-pgreen-olive: #657625;
-  --color-pegg: #DCD0BC;
-  --color-pgray: #131212;
-  --color-pred: #D4421A;
+	--color-pgreen-dark: #455037;
+	--color-pgreen-olive: #657625;
+	--color-pegg: #DCD0BC;
+	--color-pgray: #131212;
+	--color-pred: #D4421A;
 }
 
 .button-primary {
-  @apply bg-pgreen-olive text-white px-3 py-2 rounded-lg font-semibold hover:bg-pred transition;
+	@apply bg-pgreen-olive text-white px-3 py-2 rounded-lg font-semibold hover:bg-pred transition;
+}
+
+.input-primary {
+	@apply border-2 rounded-lg px-3 py-2 text-sm text-pgray outline-none focus:ring-2 focus:ring-offset-1;
+	border-color: var(--color-pgreen-olive);
+}
+
+.container-primary {
+  @apply rounded-lg bg-pgreen-olive;
+}
+
+.container-secondary {
+  @apply rounded-lg bg-pgreen-dark;
+}
+
+.container-tertiary {
+  @apply rounded-lg bg-pegg;
+}
+
+.container-quaternary {
+  @apply rounded-lg bg-pgray;
+}
+
+.container-quinary {
+  @apply rounded-lg bg-pred;
 }

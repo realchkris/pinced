@@ -16,15 +16,19 @@ class SearchController extends Controller
 	{
 		$request->validate([
 			'dish' => 'required|string|max:255',
+			'location' => 'required|string|max:255',
 		]);
 
 		$dishName = $request->input('dish');
+		$locationName = $request->input('location');
 
 		// Future check DB/scraper code goes here
+		$results = []; // Dummy results
 
 		return view('search.results', [
 			'dish' => $dishName,
-			'results' => [] // placeholder
+			'location' => $locationName,
+			'results' => $results,
 		]);
 	}
 
