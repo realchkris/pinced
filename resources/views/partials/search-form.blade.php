@@ -65,6 +65,7 @@
 </form>
 
 <script>
+
 	function locationSearch() {
 		return {
 			query: '', // User input bound to input via x-model
@@ -83,7 +84,7 @@
 
 				this.loading = true;
 
-				fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=5&q=${encodeURIComponent(this.query)}`)
+				fetch('/api/nominatim?q=' + encodeURIComponent(this.query))
 					.then(res => res.json())
 					.then(data => {
 						this.results = data;
