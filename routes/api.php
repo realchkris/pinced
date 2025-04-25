@@ -23,7 +23,6 @@ Route::get('/nominatim', function (Request $request) {
 		return response($res->getBody())->header('Content-Type', 'application/json');
 	} catch (\Throwable $e) {
 		Log::error('Nominatim API error: ' . $e->getMessage());
-
 		return response()->json(['error' => 'Something went wrong: ' . $e->getMessage()], 500);
 	}
 });

@@ -1,0 +1,54 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0" version="26.2.14">
+  <diagram name="Page-1" id="eyC5i5Shbkxbg3gy7lH-">
+    <mxGraphModel dx="1426" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="0tu6kE-GxGx3GwZx2EYo-1" target="0tu6kE-GxGx3GwZx2EYo-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-1" value="&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;User inputs&lt;/font&gt;&lt;/div&gt;&lt;div&gt;Dish (text)&lt;/div&gt;&lt;div&gt;Location (Selected from OSM form)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="10" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-7" value="Query build" style="swimlane;whiteSpace=wrap;html=1;startSize=50;rotation=0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="100" width="830" height="370" as="geometry">
+            <mxRectangle x="140" y="150" width="100" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="0tu6kE-GxGx3GwZx2EYo-7" source="0tu6kE-GxGx3GwZx2EYo-9" target="0tu6kE-GxGx3GwZx2EYo-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-9" value="Extracting country from OSM location selection" style="rounded=0;whiteSpace=wrap;html=1;rotation=0;" parent="0tu6kE-GxGx3GwZx2EYo-7" vertex="1">
+          <mxGeometry x="20" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="0tu6kE-GxGx3GwZx2EYo-7" source="0tu6kE-GxGx3GwZx2EYo-12" target="0tu6kE-GxGx3GwZx2EYo-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-12" value="Finding language(s) spoken in country" style="rounded=0;whiteSpace=wrap;html=1;" parent="0tu6kE-GxGx3GwZx2EYo-7" vertex="1">
+          <mxGeometry x="190" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="43G2xlh0WYrgFUoU3QJt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="0tu6kE-GxGx3GwZx2EYo-7" source="0tu6kE-GxGx3GwZx2EYo-14" target="43G2xlh0WYrgFUoU3QJt-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-14" value="&lt;div&gt;Building query:&lt;/div&gt;&lt;div&gt;&amp;lt;dish&amp;gt; &amp;lt;restaurant keyword&amp;gt; &amp;lt;location string&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="0tu6kE-GxGx3GwZx2EYo-7" vertex="1">
+          <mxGeometry x="520" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="0tu6kE-GxGx3GwZx2EYo-7" source="0tu6kE-GxGx3GwZx2EYo-16" target="0tu6kE-GxGx3GwZx2EYo-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0tu6kE-GxGx3GwZx2EYo-16" value="Extracting most specific address" style="rounded=0;whiteSpace=wrap;html=1;" parent="0tu6kE-GxGx3GwZx2EYo-7" vertex="1">
+          <mxGeometry x="355" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="43G2xlh0WYrgFUoU3QJt-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="0tu6kE-GxGx3GwZx2EYo-7" source="43G2xlh0WYrgFUoU3QJt-1" target="43G2xlh0WYrgFUoU3QJt-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="43G2xlh0WYrgFUoU3QJt-1" value="Translating query in the spoken language using external API" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0tu6kE-GxGx3GwZx2EYo-7">
+          <mxGeometry x="30" y="210" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="43G2xlh0WYrgFUoU3QJt-3" value="Extracting subquery" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0tu6kE-GxGx3GwZx2EYo-7">
+          <mxGeometry x="190" y="210" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
