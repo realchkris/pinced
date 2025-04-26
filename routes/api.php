@@ -13,6 +13,7 @@ Route::get('/nominatim', function (Request $request) {
 			'query' => [
 				'q' => $request->query('q'),
 				'format' => 'json',
+				'addressdetails' => 1,
 				'limit' => 5,
 			],
 			'headers' => [

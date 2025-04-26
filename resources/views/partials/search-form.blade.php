@@ -31,6 +31,12 @@
 				required
 			>
 
+			<!-- Hidden input for country code -->
+			<input type="hidden" name="country_code" x-model="countryCode">
+
+			<!-- Hidden input for specific location -->
+			<input type="hidden" name="location_specific" x-model="locationSpecific">
+
 			<!-- Skeleton Dropdown -->
 			<ul
 				x-show="show && loading"
@@ -66,52 +72,56 @@
 
 <script>
 
-	function locationSearch() {
-		return {
-			query: '', // User input bound to input via x-model
-			results: [], // Array of autocomplete results from Nominatim API
-			show: false, // Whether the dropdown is visible or not
-			loading: false, // Bool for loader
-			selected: null, // Bool to check if user selected the location
+function locationSearch() {
+	return {
+		query: '', // User input bound to input field
+		results: [], // Autocomplete results from Nominatim API
+		show: false, // Show dropdown
+		loading: false, // Loading state
+		selected: null, // Selected place
+		countryCode: '', // Country code
+		locationSpecific: '', // Most specific place name
 
-			search() {
-
-				if (this.query.length < 2) {
-					this.results = [];
-					this.loading = false;
-					return;
-				}
-
-				this.loading = true;
-
-				fetch('/api/nominatim?q=' + encodeURIComponent(this.query))
-					.then(res => res.json())
-					.then(data => {
-						this.results = data;
-						this.loading = false; // Hide loader when fetched
-					})
-					.catch(() => {
-						this.loading = false; // Hide on error
-					});
-
-			},
-
-			select(place) {
-
-				this.query = place.display_name;
-				this.selected = place; // Mark as selected
-				this.show = false;
-
-			},
-
-			handleBlur() {
-				// If no selection made, clear input
-				if (!this.selected || this.query !== this.selected.display_name) {
-					this.query = '';
-				}
-				this.show = false; // Hide suggestion dropdown
+		search() {
+			if (this.query.length < 2) {
+				this.results = [];
+				this.loading = false;
+				return;
 			}
 
+			this.loading = true;
+
+			fetch('/api/nominatim?q=' + encodeURIComponent(this.query))
+				.then(res => res.json())
+				.then(data => {
+					this.results = data;
+					this.loading = false;
+				})
+				.catch(() => {
+					this.loading = false;
+				});
+		},
+
+		select(place) {
+			const address = place.address;
+
+			this.query = place.display_name; // Full name shown to user
+			this.locationSpecific = address.village || address.town || address.city || place.display_name; // Specific location
+			this.countryCode = address.country_code.toUpperCase(); // Uppercase country code
+			this.selected = place;
+			this.show = false;
+		},
+
+		handleBlur() {
+			if (!this.selected) {
+				this.query = '';
+				this.locationSpecific = '';
+				this.countryCode = '';
+			}
+			this.show = false;
 		}
+
 	}
+}
+
 </script>

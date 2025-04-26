@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "768013cb7dcd83427d3229d54bc3a49d",
+    "content-hash": "694169778de784a0c8b879e10b63cc0b",
     "packages": [
+        {
+            "name": "annexare/countries-list",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/annexare/Countries.git",
+                "reference": "cc382a4045cc7ca1ecd4c479de402dee1ba28929"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/annexare/Countries/zipball/cc382a4045cc7ca1ecd4c479de402dee1ba28929",
+                "reference": "cc382a4045cc7ca1ecd4c479de402dee1ba28929",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "dist/index.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmytro Klymenko",
+                    "email": "d@klmn.me",
+                    "homepage": "https://github.com/dmythro"
+                }
+            ],
+            "description": "Continents & countries: ISO 3166-1 alpha-2 code, name, ISO 639-1 languages, capital, currency, native name, phone. JSON, CSV and SQL.",
+            "homepage": "http://annexare.github.io/Countries/",
+            "keywords": [
+                "ISO 3166-1",
+                "ISO 639-1",
+                "capital",
+                "continent",
+                "countries",
+                "country",
+                "csv",
+                "currency",
+                "data",
+                "emoji",
+                "json",
+                "languages",
+                "sql"
+            ],
+            "support": {
+                "issues": "https://github.com/annexare/Countries/issues",
+                "source": "https://github.com/annexare/Countries"
+            },
+            "time": "2024-07-31T10:54:41+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.3",

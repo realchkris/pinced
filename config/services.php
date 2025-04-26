@@ -39,5 +39,10 @@ return [
 	    'url' => env('NOMINATIM_URL'),
 	    'user_agent' => env('NOMINATIM_USER_AGENT'),
 	],
+	
+	'deepl' => [
+		'api' => env('DEEPL_API', 'https://api-free.deepl.com'),
+		'api_key' => env('DEEPL_API_KEY'),
+	]
 
 ];
