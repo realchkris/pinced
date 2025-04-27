@@ -2,44 +2,52 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Promise\Utils;
 use Symfony\Component\DomCrawler\Crawler;
 
 class ScraperService
 {
-	public function searchDish(array $restaurants, string $dish, string $location): array
+	protected Client $client;
+
+	public function __construct()
 	{
+		$this->client = new Client([
+			'timeout' => 10,
+			'headers' => [
+				'User-Agent' => 'Mozilla/5.0 (compatible; PincedBot/1.0; +https://yourdomain.com/bot)'
+			],
+		]);
+	}
 
-		$results = [];
+	public function searchBingUrl(string $url): string
+	{
+		$response = $this->client->get($url);
 
-		foreach ($restaurants as $restaurant) {
-			if (strtolower($restaurant['location']) !== strtolower($location)) {
-				continue;
-			}
-
-			try {
-				$response = Http::get($restaurant['url']);
-
-				if ($response->ok()) {
-					$html = $response->body();
-					$crawler = new Crawler($html);
-					$text = strtolower($crawler->filter('body')->text());
-
-					if (str_contains($text, strtolower($dish))) {
-						$results[] = [
-							'name' => $restaurant['name'],
-							'location' => $restaurant['location'],
-							'source_link' => $restaurant['url'],
-						];
-					}
-				}
-			} catch (\Exception $e) {
-				// Optional: log error
-				continue;
-			}
+		if ($response->getStatusCode() !== 200) {
+			throw new \Exception("Failed to fetch Bing search results");
 		}
 
-		return $results;
+		return $response->getBody()->getContents();
 	}
-	
+
+	public function extractLinksFromBing(string $html): array
+	{
+		$crawler = new Crawler($html);
+
+		$links = [];
+
+		// Bing search results are contained in <li class="b_algo"> elements
+		$crawler->filter('li.b_algo h2 a')->each(function (Crawler $node) use (&$links) {
+			$url = $node->attr('href');
+			
+			// Only include URLs that are valid and not part of the sponsored/ads
+			if (!empty($url) && filter_var($url, FILTER_VALIDATE_URL)) {
+				$links[] = $url;
+			}
+		});
+
+		return $links;
+	}
+
 }

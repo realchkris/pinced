@@ -10,7 +10,15 @@
 	<div class="flex gap-2">
 
 		<!-- Dish -->
-		<input class="input-primary w-1/2" type="text" name="dish" id="dish" placeholder="e.g. Carbonara" required>
+		<input
+			class="input-primary w-1/2"
+			type="text"
+			name="dish"
+			id="dish"
+			placeholder="e.g. Carbonara"
+			required
+			maxlength="128"
+		>
 
 		<!-- Location -->
 		<div class="relative w-1/2">
