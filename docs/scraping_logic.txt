@@ -1,0 +1,5 @@
+1. Try JSON-LD → clean, structured
+2. If not found, try Microdata → less common but structured
+3. If not found, apply Rule-Based Extraction → tags, regex, keywords
+4. If still nothing, apply Structure-Based Heuristics → layout + proximity + scoring
+5. If still nothing, log for review or skip

@@ -1,0 +1,107 @@
+https://www.timeout.com/newyork/restaurants/the-best-fried-chicken-in-nyc
+(aggregator)
+
+restaurant names: h3 > a > div > div > article
+location address: span > li > ul > section > div > div > article
+
+---
+
+https://www.coqodaq.com/
+(restaurant website)
+
+restaurant name: title > head (It's "Homepage | COQODAQ", so requires keyword and character removal)
+location address: (footer) div > ... (lots of nested divs) > section (called section-visitus)
+
+---
+
+https://chirpnyc.com/
+(restaurant website)
+
+restaurant name: title > head (It's "Chirp - Hudson Yards - Hells Kitchen, New York, NY", so requires keyword and character removal, but also contains the generic location!)
+location address: (footer) div (class="days", wrong, but nevermind) > div (called contact-us)
+
+---
+
+https://ny.eater.com/maps/best-roast-chicken-nyc
+(aggregator)
+
+restaurant names: h1 > div > div > section (data-slug="chirping-chicken") > main
+location addresses: a (href is a google maps link i.e. https://www.google.com/maps/search/?api=1&query=Chirping+Chicken&query_place_id=ChIJBXOQ91JYwokRWOD57hf5Bss) > div > ... (nested divs) > section
+
+---
+
+https://www.louieschickennyc.com/
+(restaurant website)
+restaurant name: title > head (It's "Homepage Louie's Chicken", so requires Keyword removal) > main
+location addresses: stored in subpage, requires puppeteer unfortunately
+
+---
+
+https://www.thrillist.com/eat/new-york/best-nyc-restaurants-chicken
+(aggregator)
+
+restaurant names: a (contains direct link to their website!) > h2 > div > ... (lots of nested divs) > article
+location addresses: em > p (right after the div that contains the relative restaurant title) > div > ... (lots of nested divs) > article
+
+---
+
+https://www.charlespanfriedchicken.com/
+(restaurant website)
+
+restaurant name: title > head
+location address: (footer) p > div > ... (nested divs) > section > article
+(in this case they actually have 2 locations, but whatever)
+
+---
+
+https://secretnyc.co/best-fried-chicken-in-nyc/
+(aggregator)
+
+restaurant names: <h2> (requires bullet point removal, contains generic location separated by ", ") > section > div > section > article
+location addresses: <p> (near a <strong> tag with content "Where:") > section > div > section > article
+
+---
+
+https://guide.michelin.com/en/article/travel/best-fried-chicken-new-york-city
+(aggregator)
+
+restaurant names: a (with link to other page, with content related to the restaurant) > b > h2 > div > ... (nested divs) > section > main
+location addresses: b (right under the other b containing the name) > h2 > div >  ... (nested divs) > section > main
+
+---
+
+https://gastroranking.it/ristoranti/lombardia/mantova/
+(aggregator)
+
+restaurant names: a (with link redirection to other page, with content related to the restaurant. title=restaurant name) > h3 > div > ... (nested divs) > section
+location addresses: span (class="locationCity info". It's right below the h3 containing the restaurant name) > div > ... (nested divs) > section
+
+---
+
+https://www.sucarbrusc.it/
+(restaurant website)
+restaurant name: title ("Sucar Brusc - Ristorante Mantova" requires character and "Ristorante Mantova" keyword removal (location + place) > head
+location address: (footer) split inside span (this website uses the wixui) > ... (nested divs) > <section>
+
+---
+
+https://www.aigaribaldini.it/
+(restaurant website)
+restaurant name: title ("Trattoria "AI GARIBALDINI" - Ristorante in centro a Mantova", idk how to tackle this one, it's real specific) > head
+location address: (inside a gigantic p with lots of br tags) > div > ... (nested divs) > footer
+
+---
+
+https://www.finedininglovers.it/mappe/migliori-ristoranti-mantova
+(aggregator)
+
+restaurant names: h2 > div (class="restaurant-title") > ... (nested divs) > section
+restaurant addresses: split inside span (class="address-line-1", class="address-line2") > p > div > ... (some divs) > div right below the div containing the title.
+
+---
+
+https://ilcignoristorante.it/
+(restaurant website)
+
+restaurant name: title ("Home < Il Cigno Ristorante a Mantova" again idk how to tackle it, beside removing characters and keyword) > head
+restaurant address: (footer) div (split by br element) > ... (lots of divs) > div (id="footer")
